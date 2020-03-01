@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import FeedCard from './FeedCard';
+import FeedCard from '../FeedCard';
 import FeedList from './FeedList';
 
 describe('test FeedList component', () => {

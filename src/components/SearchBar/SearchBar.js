@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Form, FormControl, Button } from 'react-bootstrap';
-import { scrollTop } from '../utils';
+import { scrollTop } from '../../utils';
 import PropTypes from 'prop-types';
 
 const SearchBar = ({ searchString, handleInputChange }) => {

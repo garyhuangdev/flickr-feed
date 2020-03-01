@@ -1,5 +1,5 @@
 import React from 'react';
-import FeedCard from './FeedCard';
+import FeedCard from '../FeedCard';
 import { CardColumns } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 

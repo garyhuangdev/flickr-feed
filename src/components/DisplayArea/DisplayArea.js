@@ -1,14 +1,14 @@
 import React from 'react';
-import FeedList from '../components/Feed';
-import Alert from '../components/Alert';
-import Loader from '../components/Loader';
-import { alert } from '../constants/message';
+import FeedList from '../FeedList';
+import Alert from '../Alert';
+import Loader from '../Loader';
+import { alert } from '../../constants/message';
 import PropTypes from 'prop-types';
 
-const Container = ({ feeds, loading, error, searchString }) => {
+const DisplayArea = ({ feeds, loading, error, searchString }) => {
   const { emptyInput, dataError, noFeeds } = alert;
   return (
-    <div className="home-container">
+    <div className="display-area">
       {!searchString ? (
         <Alert
           alertHeading={emptyInput.header}
@@ -36,11 +36,11 @@ const Container = ({ feeds, loading, error, searchString }) => {
   );
 };
 
-Container.propTypes = {
+DisplayArea.propTypes = {
   feeds: PropTypes.array,
   loading: PropTypes.bool,
   error: PropTypes.object,
   searchString: PropTypes.string
 };
 
-export default Container;
+export default DisplayArea;

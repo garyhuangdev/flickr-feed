@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import DisplayArea from './DisplayArea';
-import FeedList from '../components/Feed/FeedList';
-import Alert from '../components/Alert';
-import Loader from '../components/Loader';
+import FeedList from '../FeedList';
+import Alert from '../Alert';
+import Loader from '../Loader';
 
 describe('test DisplayArea component', () => {
   test('render Alert based on props', () => {

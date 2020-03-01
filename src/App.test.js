@@ -1,7 +1,7 @@
 import React from 'react';
 import App from './App';
-import SearchBar from './layouts/SearchBar';
-import DisplayArea from './layouts/DisplayArea';
+import SearchBar from './components/SearchBar';
+import DisplayArea from './components/DisplayArea';
 import { shallow } from 'enzyme';
 
 describe('test App component', () => {

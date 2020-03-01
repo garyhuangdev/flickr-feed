@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import SearchBar from './layouts/SearchBar';
-import DisplayArea from './layouts/DisplayArea';
+import SearchBar from './components/SearchBar';
+import DisplayArea from './components/DisplayArea';
 import { fetchFlickr } from './service/fetchFlickr';
 import 'normalize.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
