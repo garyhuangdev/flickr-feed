@@ -1,5 +1,5 @@
 import React from 'react';
-import FeedLayout from '../components/Feed';
+import FeedList from '../components/Feed';
 import Alert from '../components/Alert';
 import Loader from '../components/Loader';
 import { alert } from '../constants/message';
@@ -23,14 +23,14 @@ const Container = ({ feeds, loading, error, searchString }) => {
           alertContent={dataError.content}
           variant={dataError.variant}
         />
-      ) : !feeds ? (
+      ) : !feeds || feeds.length === 0 ? (
         <Alert
           alertHeading={noFeeds.header}
           alertContent={noFeeds.content}
           variant={noFeeds.variant}
         />
       ) : (
-        <FeedLayout feeds={feeds} />
+        <FeedList feeds={feeds} />
       )}
     </div>
   );

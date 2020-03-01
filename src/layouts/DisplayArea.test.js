@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import DisplayArea from './DisplayArea';
-import FeedLayout from '../components/Feed/FeedLayout';
+import FeedList from '../components/Feed/FeedList';
 import Alert from '../components/Alert';
 import Loader from '../components/Loader';
 
@@ -26,7 +26,7 @@ describe('test DisplayArea component', () => {
         searchString="test"
       />
     );
-    expect(wrapper.find(FeedLayout)).toHaveLength(1);
+    expect(wrapper.find(FeedList)).toHaveLength(1);
   });
   test('render Loader based on props', () => {
     const wrapper = shallow(

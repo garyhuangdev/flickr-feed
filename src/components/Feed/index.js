@@ -1,3 +1,3 @@
-import FeedLayout from './FeedLayout';
+import FeedList from './FeedList';
 
-export default FeedLayout;
+export default FeedList;

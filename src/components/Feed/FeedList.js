@@ -3,7 +3,7 @@ import FeedCard from './FeedCard';
 import { CardColumns } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
-const FeedLayout = ({ feeds }) => {
+const FeedList = ({ feeds }) => {
   return (
     <CardColumns>
       {feeds.map(({ title, media, author, date_taken, link, tags }) => (
@@ -21,8 +21,8 @@ const FeedLayout = ({ feeds }) => {
   );
 };
 
-FeedLayout.propTypes = {
+FeedList.propTypes = {
   feeds: PropTypes.array
 };
 
-export default FeedLayout;
+export default FeedList;
