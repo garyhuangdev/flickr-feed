@@ -14,8 +14,8 @@
 1. In order to fetch data from flickr API, use jsonp(fetch-jsonp package) for cors.
 2. Use React to build components and store data in component state
 3. Use Sass to customise the styling of components and react-bootstrap for the layout.
-4. Use enzyme and jest for unit testing, focus on the render result of each component and the asynchronous request function correctness.
-5. Use mormalize.css and eslint for code checking and cross-browser compatibility purpose.
+4. Use enzyme and jest for unit testing, focus on the render result of each component and the correctnessof asynchronous request function.
+5. Use normalize.css and eslint for code checking and cross-browser compatibility purpose.
 
 ## Available Scripts
 
