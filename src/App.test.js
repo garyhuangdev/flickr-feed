@@ -1,9 +1,13 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import App from './App';
+import SearchBar from './layouts/SearchBar';
+import DisplayArea from './layouts/DisplayArea';
+import { shallow } from 'enzyme';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('test App component', () => {
+  test('check render correct', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find(SearchBar)).toHaveLength(1);
+    expect(wrapper.find(DisplayArea)).toHaveLength(1);
+  });
 });

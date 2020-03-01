@@ -1,26 +1,72 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import SearchBar from './layouts/SearchBar';
+import DisplayArea from './layouts/DisplayArea';
+import { fetchFlickr } from './service/fetchFlickr';
+import 'normalize.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/styles.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    searchString: '',
+    feeds: [],
+    loading: false,
+    error: null
+  };
+
+  handleSearch = () => {
+    const { searchString } = this.state;
+    if (searchString && searchString.trim()) {
+      this.setState({ loading: true });
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
+        fetchFlickr(searchString)
+          .then(response => {
+            this.setState({
+              feeds: response,
+              loading: false,
+              error: null
+            });
+          })
+          .catch(err => {
+            this.setState({
+              loading: false,
+              error: err
+            });
+          });
+      }, 300);
+    }
+  };
+
+  handleInputChange = e => {
+    const value = e.target.value;
+    this.setState(
+      {
+        searchString: value
+      },
+      () => {
+        this.handleSearch();
+      }
+    );
+  };
+
+  render() {
+    const { feeds, loading, error, searchString } = this.state;
+    return (
+      <React.Fragment>
+        <SearchBar
+          searchString={searchString}
+          handleInputChange={this.handleInputChange}
+        />
+        <DisplayArea
+          feeds={feeds}
+          loading={loading}
+          error={error}
+          searchString={searchString}
+        />
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;
