@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Badge } from 'react-bootstrap';
 import { authorConvert } from '../../utils';
 import PropTypes from 'prop-types';
 
@@ -18,9 +18,9 @@ const FeedCard = ({ title, src, author, date_taken, link, tags }) => {
       </Card.Body>
       <Card.Footer>
         <small>
-          Tags:
+          <strong>Tags: </strong>
           {tags.split(' ').map((tag, index) => (
-            <span key={tag + index}>{` #${tag}`}</span>
+            <Badge pill variant="light" key={tag + index}>{` #${tag}`}</Badge>
           ))}
         </small>
       </Card.Footer>

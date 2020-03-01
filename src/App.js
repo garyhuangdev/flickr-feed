@@ -34,7 +34,7 @@ class App extends Component {
               error: err
             });
           });
-      }, 300);
+      }, 500);
     }
   };
 
